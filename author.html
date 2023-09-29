@@ -36,6 +36,38 @@ function resolveForm (){
     }
 }
 </script>
+<form id="authorForm">
+    <label for="secretAuthor">The hidden author name:</label>
+    <input type="password" id="secretAuthor" value="Dickens">
+    
+    <label for="guessAuthor">Guess the author:</label>
+    <input type="text" id="guessAuthor">
+    
+    <button type="button" onclick="checkAuthor()">Check the guess</button>
+    
+    <p id="result"></p>
+
+</form>
+<script>
+    var good = 0;
+    var oops = 0;
+
+    function checkAuthor() {
+        const secretAuthor = document.getElementById('secretAuthor').value;
+        const guessAuthor = document.getElementById('guessAuthor').value;
+
+        if (secretAuthor === guessAuthor)
+         {
+            good++;
+            alert('You got it right!');
+        } else
+         {
+            oops++;
+            alert('Sorry');
+        }
+        document.getElementById('result').innerHTML = `right: ${good}, wrong: ${oops}`;
+    }
+</script>
 
 </body>
 </html> 
