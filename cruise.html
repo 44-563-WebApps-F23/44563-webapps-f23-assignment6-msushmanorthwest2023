@@ -32,7 +32,28 @@
 </form>
 <button onclick="updatecruise()">Update the cruise</button><br>
 
+<script> 
+  let my_cruise={};
+function selectcruise (){
+    my_cruise={};
+   my_cruise.share = document.getElementById("checkbox1").checked;
+    my_cruise.breakfast = document.getElementById("checkbox2").checked;
+    my_cruise.pass = document.getElementById("checkbox3").checked;
+    document.getElementById('my_cruise').innerHTML=JSON.stringify(my_cruise);
+    
+   }
+function updatecruise (){
+   let days= document.getElementById("daysInput").value;
+   let price= document.getElementById("priceInput").value;
+   my_cruise.days=days;
+   my_cruise.price=price;
+   document.getElementById('my_cruise').innerHTML="my_cruise[...]==" + JSON.stringify(my_cruise);
+    
+    
+   
+}
 
+</script>
 
 </body>
 </html> 
